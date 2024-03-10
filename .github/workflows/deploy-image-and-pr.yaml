@@ -55,12 +55,12 @@ jobs:
         with:
           repository: akimoto-junya/ouchi-hub-manifests
       - name: 'Update tag'
-        run: sed -i -E 's/(asia-northeast1-docker.pkg.dev\/ouchihub\/ouchi-hub\/backend:)[0-9a-z]+/\1${{ github.sha }}/' backend/deployment.yaml
+        run: sed -i -E 's/(asia-northeast1-docker.pkg.dev\/ouchihub\/ouchi-hub\/bff:)[0-9a-z]+/\1${{ github.sha }}/' bff/deployment.yaml
       - name: 'Create Pull Request'
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          commit-message: 'Update backend image tag'
+          commit-message: 'Update bff image tag'
           delete-branch: true
-          title: 'Update backend image tag'
-          branch: update-backend-image-tag
+          title: 'Update bff image tag'
+          branch: update-bff-image-tag
