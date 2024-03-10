@@ -43,7 +43,7 @@ jobs:
           context: .
           push: true
           file: Dockerfile
-          tags: asia-northeast1-docker.pkg.dev/ouchihub/ouchi-hub/backend:${{ github.sha }}
+          tags: asia-northeast1-docker.pkg.dev/ouchihub/ouchi-hub/bff:${{ github.sha }}
 
   pull-request:
     runs-on: ubuntu-latest
