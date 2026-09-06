@@ -1,4 +1,4 @@
-FROM golang:1.22.1-bookworm as build
+FROM golang:1.27.1-bookworm as build
 WORKDIR /go/src
 COPY . .
 RUN go build -o /go/bin/app ./cmd/main.go
